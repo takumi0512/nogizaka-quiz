@@ -1,0 +1,284 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans JP',"Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+
+
+
+
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9e3eb2;
+    color: #fff;
+}
+.header a{
+    color: #fff;
+    font-weight: normal;
+    text-decoration: none;
+    border-bottom: #fff 0px solid;
+    transition: border-bottom 0.2s;
+}
+.header a:hover{
+    border-bottom: #fff 2px solid;
+}
+.header h1{
+    margin: 10px;
+}
+
+
+.headSide{
+    display: flex;
+    margin: 10px;
+}
+.item{
+    margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 本体 */
+#h1{
+  text-align: center;
+  margin-top: 20px;
+}
+@media screen and (max-width:768px){
+  #h1 {
+    font-size: 1.3em;
+  }
+}
+
+
+
+/* リスト要素全体を含むコンテナ */
+.list{
+  margin: 0 5% 0 5%;
+}
+@media screen and (max-width:768px){
+  .list{
+    margin: 0;
+  }
+}
+
+/* 表示順選択ボタン */
+.button{
+  display: flex;
+}
+.btnitem{
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #9e3eb2;
+  box-shadow:  rgba(0,0,0, 0.5) 2px 4px 0;
+  transition: box-shadow .25s;
+}
+.btnitem:hover{
+  box-shadow:  rgba(0,0,0, 0) 0 0 0;
+}
+@media screen and (max-width:768px){
+  .button{
+    justify-content: center;
+  }
+}
+
+/* 要素 */
+.element{
+    margin: 20px;
+    border: #9e3eb2 1px solid;
+}
+
+
+/* meta情報 */
+.metaBox{
+  display: flex;
+  border: #9e3eb2 1px solid;
+  padding-left: 1em;
+  background-color: #9e3eb2;
+  color: #fff;
+}
+.category{
+  margin-left: 2em;
+}
+.level{
+  margin-left: 2em;
+  color: #fff;
+}
+.level:hover{
+  color: #333;
+}
+@media screen and (max-width:768px){
+  .metaBox{
+    display: block;
+  }
+  .category{
+    margin: 0;
+  }
+  .level{
+    margin: 0;
+  }
+}
+
+
+/* 問題表示 */
+.question{
+    border: #9e3eb2 1px solid;
+    padding:  .625em .625em .625em 2em;
+    font-size: 1.3em;
+}
+@media screen and (max-width:768px){
+  .question{
+    padding: 0.4em;
+  }
+}
+
+
+
+
+
+
+
+
+/* 答え表示 */
+
+/* 基本的なやつ */
+.accordion__title {
+    border: 1px solid #9e3eb2;
+    color: #9e3eb2;
+    padding: .625em .625em .625em 2em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+
+.accordion__content {
+  font-size: 1.3em;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    padding: 0 1.5em;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration: .3s;
+  }
+
+  .accordion__content.is-open {
+    border: 1px solid #9e3eb2;
+    padding: .625em 1.5em;
+    line-height: normal; /* numberに書き換える*/
+    height: auto;
+    opacity: 1;
+  }
+
+  @media screen and (max-width:768px){
+    .accordion__content{
+      font-size: 1.2em;
+      padding: 0 0.5em;
+    }
+    .accordion__content.is-open{
+      padding: 0.3em 0.5em;
+    }
+  }
+
+
+/* 色変える装飾 */
+.accordion__title:hover { 
+  opacity: 0.8;
+}
+
+
+/* 右の動くやつ */
+.accordion__title::before, .accordion__title::after {
+    content: '';
+    display: block;
+    background-color: #9e3eb2;
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 2px;
+    right: 25px;
+  }
+  
+  .accordion__title::after {
+    transform: rotate(90deg);
+    transition-duration: .3s;
+  }
+
+  .accordion__title.is-active::before {
+    opacity: 0;
+  }
+  
+  .accordion__title.is-active::after {
+    transform: rotate(0);
+  }
+
+
+/* 出典 */
+  .refer{
+    font-size: 1rem;
+    /* border: #9e3eb2 1px solid; */
+    padding-left: 1em;
+    margin: 0.625em;
+}
+@media screen and (max-width:768px){
+  .refer{
+    padding-left:0;
+    margin: 0.5em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* フット */
+.fot{
+  background-color: #9e3eb2;
+}
+.content{
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.content a{
+  color: #fff;
+  text-decoration: none;
+  border-bottom: #fff 0px solid;
+}
+.content a:hover{
+  border-bottom: #fff 1px solid;
+}

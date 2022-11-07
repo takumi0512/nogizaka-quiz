@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <meta name="description" content="text">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style2.css">
+
+</head>
+<body>
+
+   
+    <header class="header">
+        <h1>
+            <a href="./index.html" class="htitle">乃木坂クイズ</a>
+        </h1>
+
+        <div class="headSide">
+            <div class="item">
+                <a href="./index.html#section1">答える</a>
+            </div>
+            <div class="item">
+                <a href="./index2.html">投稿する</a>
+            </div>
+        </div>
+       
+    </header>
+
+    
+
+    <h1 class="title">クイズを投稿する</h1>
+
+    <p>＊は必須項目</p>
+
+
+    <form action="" class="form">
+
+        <div class="content">
+            <label for="user">ユーザー名
+                <input type="text" id="user" placeholder="名無し">
+            </label>
+        </div>
+
+        <div class="content">
+            <label for="level">＊難易度
+                <select name="" id="level">
+                    <option value="level1">Level1</option>
+                    <option value="level2">Level2</option>
+                    <option value="level3">Level3</option>
+                    <option value="level4">Level4</option>
+                    <option value="level5">Level5</option>
+                </select>
+            </label>
+        </div>
+        
+
+
+        <div class="content">
+            <div>＊ジャンル</div>
+            <label for="c0">
+                <input type="checkbox" name="category" id="c0" value="メンバー">メンバー
+            </label>
+            <label for="c1">
+                <input type="checkbox" name="category" id="c1" value="楽曲">楽曲
+            </label>
+            <label for="c2">
+                <input type="checkbox" name="category" id="c2" value="ライブ">ライブ
+            </label>
+            <br class="br-sp">
+            <label for="c3">
+                <input type="checkbox" name="category" id="c3" value="乃木どこ・乃木中">乃木どこ・乃木中
+            </label>
+            <label for="c4">
+                <input type="checkbox" name="category" id="c4" value="番組">番組
+            </label>
+            <label for="c5">
+                <input type="checkbox" name="category" id="c5" value="その他">その他
+            </label>
+        </div>
+
+
+
+        <div class="content">
+            <div>＊問題</div>
+            <textarea id="question" rows="5" cols="40"></textarea>
+        </div>
+
+        <div class="content">
+           <div>＊解答</div>
+           <textarea id="answer" cols="40" rows="2"></textarea>
+        </div>
+
+        <div class="content">
+            <label for="refer">出典
+                <input type="text" id="refer" name="">
+            </label>
+        </div>
+
+    </form>
+
+
+    <div class="button" id="button">投稿する</div>
+
+    <script src="../dist/app2.bundle.js"></script>
+</body>

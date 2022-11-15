@@ -71,6 +71,10 @@ body{
 }
 .el{
     width: calc(100%/9);
+
+    /* モザイク */
+    -ms-filter: blur(6px);
+	filter: blur(6px);
 }
 
 @media screen and (max-width: 768px){
@@ -230,3 +234,21 @@ body{
 
 
 
+.fotBox{
+    font-size: 12px;
+    padding: 10px;
+    background-color: #9e3eb2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.fotItem a{
+    text-decoration: none;
+}
+
+.fotEl{
+    color: #fff;
+}

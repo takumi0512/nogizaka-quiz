@@ -6,7 +6,7 @@ let answer = document.querySelector("#answer");
 let refer = document.querySelector("#refer");
 let checkButton = document.getElementById("button");
 
-
+let today = new Date();
 
 
 // 投稿ボタンが押されたら最初にする処理をまとめた関数
@@ -30,15 +30,14 @@ const init = () =>{
 
 // 投稿ボタンを押された時の処理
 
-checkButton.addEventListener("click",() => {
+checkButton.addEventListener("click", async() => {
     init()
     // 必須項目が入力されているかチェックする
     if(categoryList.length === 0 || question.value === "" || answer.value === ""){
         categoryList = []
         alert("必須項目は全て入力して下さい")
     } else{
-        setDocFunction();
-        alert("投稿が完了しました")
+        await setDocFunction();
         location.href = "./index.html"
     }
 },false);
@@ -55,44 +54,26 @@ checkButton.addEventListener("click",() => {
 import {db} from "./myFirebase"
 import { doc, setDoc} from "firebase/firestore"
 
-const setDocFunction = () => {
-    let ident = "D" + String(Math.floor(Math.random()*100000000));
-    console.log(ident);
-    console.log(userName.value);
-    console.log(level.value);
-    console.log(categoryList);
-    console.log(question.value);
-    console.log(answer.value);
-    console.log(refer.value);
-
-    setDoc(doc(db,level.value,ident),{
+const setDocFunction = async() => {
+    let ident = String(today.getFullYear())+"."+String(today.getMonth()+1)+String(today.getDate())+"."+String(today.getHours())+":"+String(today.getMinutes())+":"+String(today.getSeconds());
+   
+    const submit = await setDoc(doc(db,level.value,ident),{
         name: userName.value,
         level: level.value,
         category: categoryList,
         question: question.value,
         answer: answer.value,
         refer: refer.value,
-    });
+    }).then(()=>{
+        console.log("成功");
+        alert("投稿が完了しました");
+    }).catch((e => {
+        console.log("失敗");
+        alert("投稿に失敗しました");
+    }))
     console.log("firebase完了")
 };
 
 
 
 
-
-
-
-// 実験用
-
-const checkfunction = () =>{
-    setDoc(doc(db,"users","checkfunction"),{
-        name: userName.value,
-        level: level.value,
-        category: categoryList,
-        question: question.value,
-        answer: answer.value,
-        refer: refer.value,
-    });
-};
-
-checkfunction();
